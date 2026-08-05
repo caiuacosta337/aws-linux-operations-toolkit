@@ -18,3 +18,11 @@ aws-linux-operations-toolkit/
 ├── docs/
 ├── screenshots/
 └── .github/
+
+## Features
+
+- Automated EC2 provisioning
+- AWS Systems Manager Session Manager integration
+- SSH-less connectivity
+- System reporting
+- Infrastructure automation using AWS CLI
