@@ -1,15 +1,29 @@
 #!/bin/bash
 
-echo "===== SYSTEM REPORT ====="
+echo "================================="
+echo " AWS Linux Operations Toolkit"
+echo " System Report"
+echo "================================="
+
+echo ""
 echo "Hostname: $(hostname)"
-echo "Kernel: $(uname -r)"
+
+echo ""
+echo "Kernel:"
+uname -r
+
+echo ""
 echo "Uptime:"
 uptime
 
 echo ""
-echo "Memory:"
+echo "Memory Usage:"
 free -h
 
 echo ""
-echo "Disk:"
+echo "Disk Usage:"
 df -h /
+
+echo ""
+echo "Logged Users:"
+who
