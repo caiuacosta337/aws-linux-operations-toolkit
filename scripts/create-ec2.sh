@@ -30,11 +30,25 @@ aws iam get-role \
 
 echo "Role found: $ROLE_NAME"
 
+if ! aws iam get-role \
+--role-name "$ROLE_NAME" >/dev/null 2>&1; then
+ 
+echo "ERROR: IAM Role $ROLE_NAME not found"
+exit 1
+fi
+
 echo ""
 echo "[3/5] Verifying Instance Profile..."
 
 aws iam get-instance-profile \
   --instance-profile-name "$PROFILE_NAME" >/dev/null 2>&1
+
+if ! aws iam get-instance-profile \
+  --instance-profile-name "$PROFILE_NAME" >/dev/null 2>&1; then
+
+    echo "ERROR: Instance Profile $PROFILE_NAME not found"
+    exit 1
+fi
 
 echo "Instance Profile found: $PROFILE_NAME"
 
